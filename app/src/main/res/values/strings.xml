@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">ToDoApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description_list_no_data_image">No Data</string>
+    <string name="description_list_fab_add">Add</string>
 </resources>

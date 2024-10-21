@@ -1,7 +1,15 @@
 package com.hyunjung.todoapp.list
 
-import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.hyunjung.todoapp.R
+import com.hyunjung.todoapp.core.BaseFragment
+import com.hyunjung.todoapp.databinding.FragmentListBinding
 
-class ListFragment : Fragment(R.layout.fragment_list) {
+class ListFragment : BaseFragment<FragmentListBinding>(FragmentListBinding::inflate) {
+
+    override fun initView() {
+        binding.fabListAdd.setOnClickListener {
+            findNavController().navigate(R.id.action_list_to_add)
+        }
+    }
 }
