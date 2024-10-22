@@ -2,4 +2,12 @@
     <string name="app_name">ToDoApp</string>
     <string name="description_list_no_data_image">No Data</string>
     <string name="description_list_fab_add">Add</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+
+    <string-array name="priorities">
+        <item>High Priority</item>
+        <item>Medium Priority</item>
+        <item>Low Priority</item>
+    </string-array>
 </resources>
