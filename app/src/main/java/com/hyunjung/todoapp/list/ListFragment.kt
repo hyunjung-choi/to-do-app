@@ -8,8 +8,13 @@ import com.hyunjung.todoapp.databinding.FragmentListBinding
 class ListFragment : BaseFragment<FragmentListBinding>(FragmentListBinding::inflate) {
 
     override fun initView() {
-        binding.fabListAdd.setOnClickListener {
-            findNavController().navigate(R.id.action_list_to_add)
+        with(binding) {
+            fabListAdd.setOnClickListener {
+                findNavController().navigate(R.id.action_list_to_add)
+            }
+            fragmentList.setOnClickListener {
+                findNavController().navigate(R.id.action_list_to_update)
+            }
         }
     }
 }
