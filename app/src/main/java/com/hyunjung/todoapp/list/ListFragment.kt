@@ -6,6 +6,7 @@ import android.view.MenuItem
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
+import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import com.hyunjung.todoapp.R
 import com.hyunjung.todoapp.core.BaseFragment
@@ -37,8 +38,8 @@ class ListFragment : BaseFragment<FragmentListBinding>(FragmentListBinding::infl
             }
 
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-                TODO("Not yet implemented")
+                return true
             }
-        })
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 }
