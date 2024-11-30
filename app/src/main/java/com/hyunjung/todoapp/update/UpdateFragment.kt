@@ -25,6 +25,7 @@ class UpdateFragment : BaseFragment<FragmentUpdateBinding>(FragmentUpdateBinding
             }
 
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                if (menuItem.itemId == android.R.id.home) requireActivity().onBackPressedDispatcher.onBackPressed()
                 return true
             }
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
