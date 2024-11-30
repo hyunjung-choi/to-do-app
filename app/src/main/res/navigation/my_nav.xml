@@ -12,7 +12,11 @@
         tools:layout="@layout/fragment_list">
         <action
             android:id="@+id/action_list_to_add"
-            app:destination="@id/add" />
+            app:destination="@id/add"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
         <action
             android:id="@+id/action_list_to_update"
             app:destination="@id/update" />
@@ -25,7 +29,9 @@
         tools:layout="@layout/fragment_add">
         <action
             android:id="@+id/action_add_to_list"
-            app:destination="@id/list" />
+            app:destination="@id/list"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right" />
     </fragment>
 
     <fragment
