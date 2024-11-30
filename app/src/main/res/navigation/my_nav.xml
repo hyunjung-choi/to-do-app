@@ -19,7 +19,11 @@
             app:popExitAnim="@anim/to_right" />
         <action
             android:id="@+id/action_list_to_update"
-            app:destination="@id/update" />
+            app:destination="@id/update"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
     </fragment>
 
     <fragment
@@ -41,6 +45,8 @@
         tools:layout="@layout/fragment_update">
         <action
             android:id="@+id/action_update_to_list"
-            app:destination="@id/list" />
+            app:destination="@id/list"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
     </fragment>
 </navigation>
