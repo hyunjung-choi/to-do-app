@@ -1,4 +1,4 @@
-package com.hyunjung.todoapp.add
+package com.hyunjung.todoapp.presentation.update
 
 import android.view.Menu
 import android.view.MenuInflater
@@ -7,10 +7,10 @@ import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.lifecycle.Lifecycle
 import com.hyunjung.todoapp.R
-import com.hyunjung.todoapp.core.BaseFragment
-import com.hyunjung.todoapp.databinding.FragmentAddBinding
+import com.hyunjung.todoapp.presentation.core.BaseFragment
+import com.hyunjung.todoapp.databinding.FragmentUpdateBinding
 
-class AddFragment : BaseFragment<FragmentAddBinding>(FragmentAddBinding::inflate) {
+class UpdateFragment : BaseFragment<FragmentUpdateBinding>(FragmentUpdateBinding::inflate) {
 
     override fun initView() {
         setMenu()
@@ -18,9 +18,10 @@ class AddFragment : BaseFragment<FragmentAddBinding>(FragmentAddBinding::inflate
 
     private fun setMenu() {
         val menuHost: MenuHost = requireActivity()
+
         menuHost.addMenuProvider(object : MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-                menuInflater.inflate(R.menu.add_fragment_menu, menu)
+                menuInflater.inflate(R.menu.update_fragment_menu, menu)
             }
 
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
