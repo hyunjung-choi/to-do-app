@@ -1,4 +1,4 @@
-package com.hyunjung.todoapp.core
+package com.hyunjung.todoapp.presentation.core
 
 import android.os.Bundle
 import android.view.LayoutInflater

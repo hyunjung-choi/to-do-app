@@ -1,4 +1,4 @@
-package com.hyunjung.todoapp.list
+package com.hyunjung.todoapp.presentation.list
 
 import android.view.Menu
 import android.view.MenuInflater
@@ -9,7 +9,7 @@ import androidx.core.view.MenuProvider
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import com.hyunjung.todoapp.R
-import com.hyunjung.todoapp.core.BaseFragment
+import com.hyunjung.todoapp.presentation.core.BaseFragment
 import com.hyunjung.todoapp.databinding.FragmentListBinding
 
 class ListFragment : BaseFragment<FragmentListBinding>(FragmentListBinding::inflate) {
