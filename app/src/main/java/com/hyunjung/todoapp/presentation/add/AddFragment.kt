@@ -1,6 +1,5 @@
 package com.hyunjung.todoapp.presentation.add
 
-import android.text.TextUtils
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -11,15 +10,16 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import com.hyunjung.todoapp.R
-import com.hyunjung.todoapp.data.models.Priority
 import com.hyunjung.todoapp.data.models.ToDoData
 import com.hyunjung.todoapp.data.viewmodel.ToDoViewModel
 import com.hyunjung.todoapp.databinding.FragmentAddBinding
+import com.hyunjung.todoapp.presentation.SharedViewModel
 import com.hyunjung.todoapp.presentation.core.BaseFragment
 
 class AddFragment : BaseFragment<FragmentAddBinding>(FragmentAddBinding::inflate) {
 
     private val toDoViewModel: ToDoViewModel by viewModels()
+    private val sharedViewModel: SharedViewModel by viewModels()
 
     override fun initView() {
         setMenu()
@@ -46,13 +46,13 @@ class AddFragment : BaseFragment<FragmentAddBinding>(FragmentAddBinding::inflate
         val mPriority = binding.spinnerPriorities.selectedItem.toString()
         val mDescription = binding.etAddDescription.text.toString()
 
-        val validation = verifyDataFromUser(mTitle, mDescription)
+        val validation = sharedViewModel.verifyDataFromUser(mTitle, mDescription)
 
         if (validation) {
             val newData = ToDoData(
                 id = 0,
                 title = mTitle,
-                priority = parsePriority(mPriority),
+                priority = sharedViewModel.parsePriority(mPriority),
                 description = mDescription
             )
             toDoViewModel.insertData(newData)
@@ -61,20 +61,6 @@ class AddFragment : BaseFragment<FragmentAddBinding>(FragmentAddBinding::inflate
         } else {
             Toast.makeText(requireContext(), "Please fill out all fields.", Toast.LENGTH_SHORT)
                 .show()
-        }
-    }
-
-    private fun verifyDataFromUser(title: String, description: String): Boolean {
-        return if (TextUtils.isEmpty(title) || TextUtils.isEmpty(description)) false
-        else !(title.isEmpty() || description.isEmpty())
-    }
-
-    private fun parsePriority(priority: String): Priority {
-        return when (priority) {
-            "High Priority" -> Priority.HIGH
-            "Medium Priority" -> Priority.MEDIUM
-            "Low Priority" -> Priority.LOW
-            else -> Priority.LOW
         }
     }
 }
