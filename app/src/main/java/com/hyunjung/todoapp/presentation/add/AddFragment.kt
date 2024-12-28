@@ -23,6 +23,7 @@ class AddFragment : BaseFragment<FragmentAddBinding>(FragmentAddBinding::inflate
 
     override fun initView() {
         setMenu()
+        binding.spinnerPriorities.onItemSelectedListener = sharedViewModel.listener
     }
 
     private fun setMenu() {
